@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+.main_box{
+    position:relative;
+    width:100%;
+    height:100vh;
+    background:url('../img/fundo.webp') center center no-repeat;
+    background-size:cover;
+}
+
+#check{
+    display:none;
+}
+
+/* Menu */
+
+.sidebar_menu{
+    position:fixed;
+    top:0;
+    left:-280px;
+    width:280px;
+    height:100vh;
+
+    background:rgba(20,20,20,.95);
+    backdrop-filter:blur(10px);
+
+    box-shadow:5px 0 20px rgba(0,0,0,.3);
+
+    transition:.3s;
+}
+
+/* Logo */
+
+.logo{
+    height:80px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.logo a{
+    color:#fff;
+    text-decoration:none;
+    font-size:24px;
+    font-weight:600;
+}
+
+/* Btn abre */
+
+.btn_one i{
+    position:absolute;
+    left:20px;
+    top:15px;
+
+    color:white;
+    font-size:28px;
+
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn_one i:hover{
+    transform:scale(1.1);
+}
+
+/* Btn fecha */
+
+.btn_two i{
+    position:absolute;
+    right:20px;
+    top:15px;
+
+    color:white;
+    font-size:24px;
+
+    cursor:pointer;
+    opacity:0;
+
+    transition:.3s;
+}
+
+
+.menu{
+    margin-top:25px;
+}
+
+.menu ul{
+    list-style:none;
+}
+
+.menu li{
+    margin:10px 15px;
+    padding:14px 18px;
+    border-radius:10px;
+
+    transition:.3s;
+}
+
+.menu li:hover{
+    background:rgba(255,255,255,.08);
+}
+
+.menu i{
+    color:#5098B1;
+    margin-right:12px;
+    width:20px;
+}
+
+.menu a{
+    color:white;
+    text-decoration:none;
+    font-size:17px;
+    font-weight:400;
+}
+
+
+.social_media{
+    position:absolute;
+    bottom:35px;
+    width:100%;
+
+    display:flex;
+    justify-content:center;
+    gap:18px;
+}
+
+.social_media a{
+    color:#bdbdbd;
+    font-size:18px;
+
+    transition:.3s;
+}
+
+.social_media a:hover{
+    color:#5098B1;
+    transform:translateY(-3px);
+}
+
+
+#check:checked ~ .sidebar_menu{
+    left:0;
+}
+
+#check:checked ~ .btn_one i{
+    opacity:0;
+}
+
+#check:checked ~ .sidebar_menu .btn_two i{
+    opacity:1;
+}
